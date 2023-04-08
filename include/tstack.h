@@ -9,7 +9,7 @@ class TStack {
   int top;
   T arr[100];
   
-public:
+ public:
   TStack() : top(-1) {}
   void push(T value) {
   if (isFull())
