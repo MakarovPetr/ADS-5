@@ -9,10 +9,10 @@ class TStack {
   int top;
   T arr[100];
   
- public:
- TStack() : top(-1) {}
- void push(T value) {
- if (isFull())
+public:
+  TStack() : top(-1) {}
+  void push(T value) {
+  if (isFull())
   throw std::string("Full!");
   else
   arr[++top] = value;
