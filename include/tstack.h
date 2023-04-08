@@ -6,10 +6,10 @@ template <typename T, int size>
 class TStack {
  private:
   int top;
-  T arr[100];
+  T* arr;
   
  public:
-  TStack() : top(-1) {}
+  TStack() : top(-1) {arr = new T[size];}
   void push(T value) {
   if (isFull())
   throw std::string("Full!");
