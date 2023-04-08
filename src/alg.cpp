@@ -51,12 +51,12 @@ std::string infx2pstfx(std::string inf) {
         if (i == (inf.length() - 1)) {
             while (stack1.isEmpty() != true) {
                 postf += stack1.get();
+                postf += ' ';
                 stack1.pop();
-                if (stack1.get() != -1)
-                    postf += ' ';
             }
         }
     }
+    postf.pop_back();
     return postf;
 }
 
