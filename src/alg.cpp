@@ -28,19 +28,18 @@ std::string infx2pstfx(std::string inf) {
         if (inf[i] >= '0' && inf[i] <= '9') {
             postf += inf[i];
             postf += ' ';
-        }
-        else if (inf[i] == '(' || GetPrior(inf[i]) > GetPrior(stack1.get()) ||stack1.isEmpty()) {
+        } else if (inf[i] == '(' || GetPrior(inf[i]) > GetPrior(stack1.get())\
+                   ||stack1.isEmpty()) {
             stack1.push(inf[i]);
-        }
-        else if ((GetPrior(inf[i]) <= GetPrior(stack1.get())) &&(GetPrior(inf[i]) != 1)) {
+        } else if ((GetPrior(inf[i]) <= GetPrior(stack1.get()))\
+                   &&(GetPrior(inf[i]) != 1)) {
             while (GetPrior(inf[i]) <= GetPrior(stack1.get())) {
                 postf += stack1.get();
                 postf += ' ';
                 stack1.pop();
             }
             stack1.push(inf[i]);
-        }
-        else if (inf[i] == ')') {
+        } else if (inf[i] == ')') {
             while (stack1.get() != '(') {
                 postf += stack1.get();
                 postf += ' ';
